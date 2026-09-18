@@ -1,0 +1,13 @@
+services:
+  monitor:
+    build: .
+    container_name: vps-monitor
+    ports:
+      - "3005:3005"
+    env_file:
+      - .env
+    environment:
+      - MONITOR_HOST=http://host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
