@@ -18,7 +18,7 @@ export const SERVICES: Service[] = [
   { id: "lead-frontend", name: "Lead Frontend", url: `${PUBLIC_IP}:5173`, port: 5173, container: "lead-frontend", description: "Acesso: http://187.127.52.68:5173" },
   { id: "compras", name: "Compras App", url: `${PUBLIC_IP}:3003`, port: 3003, container: "compras-app", description: "Acesso: http://187.127.52.68:3003" },
   { id: "mock-openwa", name: "Mock OpenWA", url: `${PUBLIC_IP}:8000`, port: 8000, container: "lead-mock-openwa", description: "Acesso: http://187.127.52.68:8000" },
-  { id: "multi-atendimento", name: "Multi Atendimento", url: `https://checkout-combine-sam-utils.trycloudflare.com`, port: 443, container: "ma-web", description: "Acesso: https://checkout-combine-sam-utils.trycloudflare.com (via Caddy 80/443)" },
+  { id: "multi-atendimento", name: "Multi Atendimento", url: `${PUBLIC_IP}:80`, port: 80, container: "ma-web", description: "Acesso: http://187.127.52.68 (Caddy) • https://checkout-combine-sam-utils.trycloudflare.com" },
 ];
 
 export async function checkService(s: Service, timeoutMs = 5000): Promise<{ ok: boolean; ms: number; status?: number; error?: string }> {
